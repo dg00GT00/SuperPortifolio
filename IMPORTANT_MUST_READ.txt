@@ -1,0 +1,1 @@
+For javascript module implementation, the imports in typescript files must end with javascript extension (.js)
