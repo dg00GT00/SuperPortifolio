@@ -1,0 +1,48 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 70vw;
+  margin: 0 auto;
+}
+
+.header {
+  height: 120px;
+  border-radius: 10px;
+  background-color: #00303f;
+
+  .nav {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logo {
+      height: auto;
+      width: max-content;
+      display: flex;
+      align-items: center;
+      img {
+        margin-left: 5em;
+        width: 5em;
+      }
+      span {
+        color: white;
+      }
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      width: 40%;
+      color: white;
+
+      li {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -67,6 +67,7 @@ const requestListener: RequestListener = (req: IncomingMessage, res: ServerRespo
         } else {
             serverObj = {
                 ...serverObj,
+                fileToRead,
                 headers: {
                     "Content-Type": mimeTypes[fileExt as keyof typeof mimeTypes] ?? "application/octet-stream"
                 }
