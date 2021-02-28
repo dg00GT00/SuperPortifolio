@@ -24,6 +24,7 @@ const mimeTypes = {
     ".html": "text/html",
     ".css": "text/css",
     ".png": "image/png",
+    ".webp": "image/webp",
     ".jpg": "image/jpg",
     ".gif": "image/gif",
     ".svg": "image/svg+xml",
