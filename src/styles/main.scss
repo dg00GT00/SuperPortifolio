@@ -87,11 +87,13 @@ body {
       }
     }
   }
+
   .core {
     border-left: 1px solid #00000021;
     border-right: 1px solid #00000021;
     width: 100%;
-    padding: 4%;
+    margin: 7% 0 12% 0;
+    padding: 0 4%;
 
     .landing-core {
       display: grid;
