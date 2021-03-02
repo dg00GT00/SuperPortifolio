@@ -14,7 +14,7 @@ body {
 }
 
 .main-container {
-  width: 70vw;
+  width: #{"min(90vw, 1880px)"};
   margin: 0 auto;
 }
 
@@ -86,6 +86,12 @@ body {
 
   .job-image {
     grid-area: image;
+    transition: transform .3s;
+
+    &:hover {
+      transform: scale(1.01);
+      cursor: pointer;
+    }
 
     img {
       height: 100%;
@@ -94,18 +100,108 @@ body {
   }
 
   .job-icons-set {
+    margin: 2em 0;
+    display: flex;
     grid-area: icons;
+    flex-direction: column;
+    justify-self: center;
 
-    .logos-container {
-      height: 15%;
-      width: 15%;
+    .job-icons-row {
+      margin: .3em 0;
+      display: flex;
     }
 
-    //.azure,
-    //.docker {
-    //  height: auto;
-    //  width: 10%;
-    //}
+    .different-margins-left {
+      margin: 0 1.5em 0 3em;
+    }
+
+    .different-margins-right {
+      margin: 0 3em 0 1.5em;
+    }
+
+    .margins-middle {
+      margin: 0 1.5em;
+    }
+
+    .job-icon-container {
+      border: 1px solid #00000036;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50em;
+    }
+
+    .azure {
+      background-image: url("../../src/assets/logos/azure.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 81%;
+      background-repeat: no-repeat;
+      background-position: center 30%;
+    }
+
+    .docker {
+      background-image: url("../../src/assets/logos/docker.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 110%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .stripe {
+      background-image: url("../../src/assets/logos/stripe.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 110%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .postgres {
+      background-image: url("../../src/assets/logos/postgres.svg");
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .react {
+      background-image: url("../../src/assets/logos/react.svg");
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .redis {
+      background-image: url("../../src/assets/logos/redis.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 97%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .netcore {
+      background-image: url("../../src/assets/logos/netcore.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 86%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .typescript {
+      background-image: url("../../src/assets/logos/typescript.svg");
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      clip-path: circle(44%);
+    }
   }
 
   .obs {
@@ -122,7 +218,7 @@ body {
   position: relative;
 
   .landing-image {
-    height: 200px;
+    height: 120px;
     width: 100%;
     clip-path: ellipse(65% 65% at 50% 33%);
 
@@ -136,13 +232,13 @@ body {
   }
 
   .header {
-    height: 100px;
+    height: 60px;
     position: absolute;
     width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 35px;
+    top: 15px;
     left: 8%;
 
     .nav {
@@ -190,8 +286,9 @@ body {
   .landing-core {
     display: grid;
     align-items: center;
-    grid-template-rows: auto 60px 100px;
-    grid-template-columns: 44% auto;
+    justify-content: space-between;
+    grid-template-rows: auto auto 100px auto;
+    grid-template-columns: 44% minmax(auto, 40em);
     grid-template-areas: "name person"
                            "role person"
                            "button person"
@@ -240,15 +337,15 @@ body {
 }
 
 footer {
-  height: 180px;
+  height: 120px;
   width: 100%;
   position: relative;
 
   .footer-container {
     position: absolute;
-    bottom: 35px;
+    bottom: 15px;
     left: 8%;
-    height: 130px;
+    height: 90px;
     width: 85%;
     display: flex;
     flex-direction: column;
@@ -257,7 +354,7 @@ footer {
 
     .github {
       height: auto;
-      width: 10%;
+      width: 6%;
     }
 
     .divider {
@@ -267,7 +364,7 @@ footer {
     }
 
     p {
-      margin-top: 14px;
+      margin-top: 7px;
       color: #ffffffcf;
     }
   }
