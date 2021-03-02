@@ -3,6 +3,7 @@
 @import "jobs-icons-sets";
 @import "./footer";
 @import "./jobs-display";
+@import "./curriculum";
 
 *, *::before, *::after {
   margin: 0;
@@ -159,6 +160,10 @@ body {
       }
     }
   }
+}
+
+.curriculum {
+
 }
 
 @include footer();
