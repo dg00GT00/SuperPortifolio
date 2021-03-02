@@ -1,0 +1,106 @@
+@mixin icons-sets() {
+  .job-icons-set {
+    margin: 2em 0;
+    display: flex;
+    grid-area: icons;
+    flex-direction: column;
+    justify-self: center;
+
+    .job-icons-row {
+      margin: .3em 0;
+      display: flex;
+    }
+
+    .different-margins-left {
+      margin: 0 1.5em 0 3em;
+    }
+
+    .different-margins-right {
+      margin: 0 3em 0 1.5em;
+    }
+
+    .margins-middle {
+      margin: 0 1.5em;
+    }
+
+    .job-icon-container {
+      border: 1px solid #00000036;
+      width: 2.5em;
+      height: 2.5em;
+      border-radius: 50em;
+    }
+
+    .azure {
+      background-image: url("../../src/assets/logos/azure.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 81%;
+      background-repeat: no-repeat;
+      background-position: center 30%;
+    }
+
+    .docker {
+      background-image: url("../../src/assets/logos/docker.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 110%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .stripe {
+      background-image: url("../../src/assets/logos/stripe.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 110%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .postgres {
+      background-image: url("../../src/assets/logos/postgres.svg");
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .react {
+      background-image: url("../../src/assets/logos/react.svg");
+      height: 100%;
+      width: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .redis {
+      background-image: url("../../src/assets/logos/redis.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 97%;
+      background-repeat: no-repeat;
+      background-position: center 54%;
+    }
+
+    .netcore {
+      background-image: url("../../src/assets/logos/netcore.svg");
+      height: 100%;
+      width: 100%;
+      background-size: 86%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .typescript {
+      background-image: url("../../src/assets/logos/typescript.svg");
+      height: 100%;
+      width: 100%;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      clip-path: circle(44%);
+    }
+  }
+}

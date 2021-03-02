@@ -1,4 +1,8 @@
 @import "./fonts";
+@import "./marketing-stripes";
+@import "jobs-icons-sets";
+@import "./footer";
+@import "./jobs-display";
 
 *, *::before, *::after {
   margin: 0;
@@ -31,188 +35,9 @@ body {
   padding: 0 4%;
 }
 
-.marketing-stripe {
-  width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: flex-end;
-  position: relative;
+@include top-marketing-stripe();
 
-  .marketing-stripe-background {
-    background-image: linear-gradient(0.25turn, transparent 0%, #23577129 34%, #f6c8a1 92%);
-    width: 100%;
-    display: flex;
-    align-items: center;
-
-    .slogan {
-      @include logo-font();
-      font-size: 1.5rem;
-      color: #00000096;
-    }
-  }
-
-  img {
-    object-fit: none;
-    object-position: 0 20%;
-    width: 50%;
-    height: 100%;
-    position: absolute;
-  }
-}
-
-.jobs {
-  display: grid;
-  grid-template-areas: "description image"
-                       "description icons"
-                       "description obs";
-
-  .job-description {
-    grid-area: description;
-    padding-right: 10em;
-
-    h2 {
-      font-size: 1.6rem;
-      margin-bottom: 2em;
-
-      & + p {
-        margin-bottom: 2em;
-      }
-    }
-
-    p {
-      @include secondary-font();
-    }
-  }
-
-  .job-image {
-    grid-area: image;
-    transition: transform .3s;
-
-    &:hover {
-      transform: scale(1.01);
-      cursor: pointer;
-    }
-
-    img {
-      height: 100%;
-      width: 85%;
-    }
-  }
-
-  .job-icons-set {
-    margin: 2em 0;
-    display: flex;
-    grid-area: icons;
-    flex-direction: column;
-    justify-self: center;
-
-    .job-icons-row {
-      margin: .3em 0;
-      display: flex;
-    }
-
-    .different-margins-left {
-      margin: 0 1.5em 0 3em;
-    }
-
-    .different-margins-right {
-      margin: 0 3em 0 1.5em;
-    }
-
-    .margins-middle {
-      margin: 0 1.5em;
-    }
-
-    .job-icon-container {
-      border: 1px solid #00000036;
-      width: 2.5em;
-      height: 2.5em;
-      border-radius: 50em;
-    }
-
-    .azure {
-      background-image: url("../../src/assets/logos/azure.svg");
-      height: 100%;
-      width: 100%;
-      background-size: 81%;
-      background-repeat: no-repeat;
-      background-position: center 30%;
-    }
-
-    .docker {
-      background-image: url("../../src/assets/logos/docker.svg");
-      height: 100%;
-      width: 100%;
-      background-size: 110%;
-      background-repeat: no-repeat;
-      background-position: center 54%;
-    }
-
-    .stripe {
-      background-image: url("../../src/assets/logos/stripe.svg");
-      height: 100%;
-      width: 100%;
-      background-size: 110%;
-      background-repeat: no-repeat;
-      background-position: center 54%;
-    }
-
-    .postgres {
-      background-image: url("../../src/assets/logos/postgres.svg");
-      height: 100%;
-      width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center 54%;
-    }
-
-    .react {
-      background-image: url("../../src/assets/logos/react.svg");
-      height: 100%;
-      width: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center 54%;
-    }
-
-    .redis {
-      background-image: url("../../src/assets/logos/redis.svg");
-      height: 100%;
-      width: 100%;
-      background-size: 97%;
-      background-repeat: no-repeat;
-      background-position: center 54%;
-    }
-
-    .netcore {
-      background-image: url("../../src/assets/logos/netcore.svg");
-      height: 100%;
-      width: 100%;
-      background-size: 86%;
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-
-    .typescript {
-      background-image: url("../../src/assets/logos/typescript.svg");
-      height: 100%;
-      width: 100%;
-      background-size: contain;
-      background-repeat: no-repeat;
-      background-position: center;
-      clip-path: circle(44%);
-    }
-  }
-
-  .obs {
-    grid-area: obs;
-
-    p {
-      @include secondary-font();
-      font-size: .7rem;
-    }
-  }
-}
+@include job-display();
 
 .container {
   position: relative;
@@ -336,45 +161,5 @@ body {
   }
 }
 
-footer {
-  height: 120px;
-  width: 100%;
-  position: relative;
-
-  .footer-container {
-    position: absolute;
-    bottom: 15px;
-    left: 8%;
-    height: 90px;
-    width: 85%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    .github {
-      height: auto;
-      width: 6%;
-    }
-
-    .divider {
-      width: 90%;
-      border-top: 1px solid;
-      border-color: #ffffff66;
-    }
-
-    p {
-      margin-top: 7px;
-      color: #ffffffcf;
-    }
-  }
-
-  .footer-image {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    object-position: 0 98%;
-    border-radius: 50px 50px 0 0;
-  }
-}
+@include footer();
 

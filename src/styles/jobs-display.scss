@@ -1,0 +1,55 @@
+@import "./fonts";
+@import "./jobs-icons-sets";
+
+@mixin job-display() {
+  .jobs {
+    display: grid;
+    grid-template-areas: "description image"
+                       "description icons"
+                       "description obs";
+
+    .job-description {
+      grid-area: description;
+      padding-right: 10em;
+
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2em;
+
+        & + p {
+          margin-bottom: 2em;
+        }
+      }
+
+      p {
+        @include secondary-font();
+      }
+    }
+
+    .job-image {
+      grid-area: image;
+      transition: transform .3s;
+
+      &:hover {
+        transform: scale(1.01);
+        cursor: pointer;
+      }
+
+      img {
+        height: 100%;
+        width: 85%;
+      }
+    }
+
+    @include icons-sets();
+
+    .obs {
+      grid-area: obs;
+
+      p {
+        @include secondary-font();
+        font-size: .7rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@mixin footer() {
+  footer {
+    height: 120px;
+    width: 100%;
+    position: relative;
+
+    .footer-container {
+      position: absolute;
+      bottom: 15px;
+      left: 8%;
+      height: 90px;
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      .github {
+        height: auto;
+        width: 6%;
+      }
+
+      .divider {
+        width: 90%;
+        border-top: 1px solid;
+        border-color: #ffffff66;
+      }
+
+      p {
+        margin-top: 7px;
+        color: #ffffffcf;
+      }
+    }
+
+    .footer-image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      object-position: 0 98%;
+      border-radius: 50px 50px 0 0;
+    }
+  }
+}
