@@ -13,9 +13,112 @@ body {
   background-repeat: repeat;
 }
 
-.site-container {
+.main-container {
   width: 70vw;
   margin: 0 auto;
+}
+
+.container-props {
+  border-radius: 10px;
+  background-color: #006989d4;
+}
+
+.core {
+  border-left: 1px solid #00000021;
+  border-right: 1px solid #00000021;
+  width: 100%;
+  margin: 7% 0 5% 0;
+  padding: 0 4%;
+}
+
+.marketing-stripe {
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+
+  .marketing-stripe-background {
+    background-image: linear-gradient(0.25turn, transparent 0%, #23577129 34%, #f6c8a1 92%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+    .slogan {
+      @include logo-font();
+      font-size: 1.5rem;
+      color: #00000096;
+    }
+  }
+
+  img {
+    object-fit: none;
+    object-position: 0 20%;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+  }
+}
+
+.jobs {
+  display: grid;
+  grid-template-areas: "description image"
+                       "description icons"
+                       "description obs";
+
+  .job-description {
+    grid-area: description;
+    padding-right: 10em;
+
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 2em;
+
+      & + p {
+        margin-bottom: 2em;
+      }
+    }
+
+    p {
+      @include secondary-font();
+    }
+  }
+
+  .job-image {
+    grid-area: image;
+
+    img {
+      height: 100%;
+      width: 85%;
+    }
+  }
+
+  .job-icons-set {
+    grid-area: icons;
+
+    .logos-container {
+      height: 15%;
+      width: 15%;
+    }
+
+    //.azure,
+    //.docker {
+    //  height: auto;
+    //  width: 10%;
+    //}
+  }
+
+  .obs {
+    grid-area: obs;
+
+    p {
+      @include secondary-font();
+      font-size: .7rem;
+    }
+  }
+}
+
+.container {
   position: relative;
 
   .landing-image {
@@ -30,11 +133,6 @@ body {
       height: 100%;
       filter: brightness(0.6);
     }
-  }
-
-  .container-props {
-    border-radius: 10px;
-    background-color: #006989d4;
   }
 
   .header {
@@ -88,105 +186,98 @@ body {
     }
   }
 
-  .core {
-    border-left: 1px solid #00000021;
-    border-right: 1px solid #00000021;
-    width: 100%;
-    margin: 7% 0 12% 0;
-    padding: 0 4%;
 
-    .landing-core {
-      display: grid;
-      align-items: center;
-      grid-template-rows: auto 60px 100px;
-      grid-template-columns: 44% auto;
-      grid-template-areas: "name person"
+  .landing-core {
+    display: grid;
+    align-items: center;
+    grid-template-rows: auto 60px 100px;
+    grid-template-columns: 44% auto;
+    grid-template-areas: "name person"
                            "role person"
                            "button person"
                            ". person";
 
-      .name {
-        grid-area: name;
-        @include logo-font();
-        font-size: 2.2rem;
-      }
+    .name {
+      grid-area: name;
+      @include logo-font();
+      font-size: 2.2rem;
+    }
 
-      .role {
-        grid-area: role;
-        @include secondary-font();
-        font-size: 1.3rem;
-      }
+    .role {
+      grid-area: role;
+      @include secondary-font();
+      font-size: 1.3rem;
+    }
 
-      .land-person {
-        grid-area: person;
+    .land-person {
+      grid-area: person;
+      width: 100%;
+      height: 510px;
+
+      img {
+        object-fit: cover;
+        height: 100%;
         width: 100%;
-        height: 510px;
-
-        img {
-          object-fit: cover;
-          height: 100%;
-          width: 100%;
-        }
       }
+    }
 
-      .button {
-        grid-area: button;
-        text-decoration: none;
-        color: currentColor;
-        background-color: #cae4db;
-        display: inline-block;
-        width: 11em;
-        border-radius: 50em;
-        padding: 1em;
-        text-align: center;
+    .button {
+      grid-area: button;
+      text-decoration: none;
+      color: currentColor;
+      background-color: #cae4db;
+      display: inline-block;
+      width: 11em;
+      border-radius: 50em;
+      padding: 1em;
+      text-align: center;
 
-        &:hover {
-          background-color: darken(#cae4db, 10%);
-        }
+      &:hover {
+        background-color: darken(#cae4db, 10%);
       }
     }
   }
+}
 
-  footer {
-    height: 180px;
+footer {
+  height: 180px;
+  width: 100%;
+  position: relative;
+
+  .footer-container {
+    position: absolute;
+    bottom: 35px;
+    left: 8%;
+    height: 130px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .github {
+      height: auto;
+      width: 10%;
+    }
+
+    .divider {
+      width: 90%;
+      border-top: 1px solid;
+      border-color: #ffffff66;
+    }
+
+    p {
+      margin-top: 14px;
+      color: #ffffffcf;
+    }
+  }
+
+  .footer-image {
+    object-fit: cover;
     width: 100%;
-    position: relative;
-
-    .footer-container {
-      position: absolute;
-      bottom: 35px;
-      left: 8%;
-      height: 130px;
-      width: 85%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      .github {
-        height: auto;
-        width: 10%;
-      }
-
-      .divider {
-        width: 90%;
-        border-top: 1px solid;
-        border-color: #ffffff66;
-      }
-
-      p {
-        margin-top: 14px;
-        color: #ffffffcf;
-      }
-    }
-
-    .footer-image {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
-      object-position: 0 98%;
-      border-radius: 50px 50px 0 0;
-    }
+    height: 100%;
+    object-position: 0 98%;
+    border-radius: 50px 50px 0 0;
   }
 }
 
