@@ -1,0 +1,17 @@
+name: SassProject
+description: An command line sass watcher.
+# version: 1.0.0
+#homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.2.2 <3.0.0'
+
+dependencies:
+  sass: ^1.26.11
+  rxdart: ^0.24.1
+  logging: ^0.11.4
+
+dev_dependencies:
+  build_runner: ^1.10.0
+  build_web_compilers: ^2.11.0
+  pedantic: ^1.9.0
