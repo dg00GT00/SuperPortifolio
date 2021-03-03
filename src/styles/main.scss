@@ -1,15 +1,14 @@
-@import "./fonts";
-@import "./marketing-stripes";
-@import "jobs-icons-sets";
-@import "./footer";
-@import "./jobs-display";
-@import "./curriculum";
+@use "utilities/fonts" as *;
+@use "./jobs-display" as j;
+@use "./marketing-stripes" as m;
+@use "./footer" as f;
+@use "./curriculum" as c;
 
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  @include primary-font();
+  @extend %primary-font;
 }
 
 body {
@@ -36,9 +35,9 @@ body {
   padding: 0 4%;
 }
 
-@include top-marketing-stripe();
+@include m.top-marketing-stripe();
 
-@include job-display();
+@include j.job-display();
 
 .container {
   position: relative;
@@ -88,7 +87,7 @@ body {
         span {
           color: white;
           font-size: 1.5rem;
-          @include logo-font();
+          @extend %logo-font;
         }
       }
 
@@ -128,13 +127,13 @@ body {
 
     .name {
       grid-area: name;
-      @include logo-font();
+      @extend %logo-font;
       font-size: clamp(1rem, 3vw, 2.2rem);
     }
 
     .role {
       grid-area: role;
-      @include secondary-font();
+      @extend %secondary-font;
       font-size: clamp(0.6rem, 1.1vw, 1.3rem);
       padding: 1em 0;
     }
@@ -169,9 +168,8 @@ body {
   }
 }
 
-@include middle-marketing-stripe();
+@include m.middle-marketing-stripe();
 
-@include curriculum();
+@include c.curriculum();
 
-@include footer();
-
+@include f.footer();

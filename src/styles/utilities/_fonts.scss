@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Biryani&family=Mada:wght@400;500&display=swap');
 
-@mixin logo-font() {
+%logo-font {
   font-family: 'Audiowide', cursive;
 }
 
-@mixin primary-font() {
+%primary-font {
   font-family: 'Mada', sans-serif;
 }
 
-@mixin secondary-font() {
+%secondary-font {
   font-family: 'Biryani', sans-serif;
 }

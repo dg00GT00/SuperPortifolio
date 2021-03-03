@@ -1,5 +1,5 @@
-@import "./fonts";
-@import "./jobs-icons-sets";
+@use "utilities/fonts" as *;
+@use "./jobs-icons-sets" as *;
 
 @mixin job-display() {
   .jobs {
@@ -22,7 +22,7 @@
       }
 
       p {
-        @include secondary-font();
+        @extend %secondary-font;
       }
     }
 
@@ -41,13 +41,13 @@
       }
     }
 
-    @include icons-sets();
+    @extend %icons-sets;
 
     .obs {
       grid-area: obs;
 
       p {
-        @include secondary-font();
+        @extend %secondary-font;
         font-size: .7rem;
       }
     }
