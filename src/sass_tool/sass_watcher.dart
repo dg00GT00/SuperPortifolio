@@ -34,7 +34,7 @@ class SassWatcher {
 
     final subs = _sassStream.switchMap((WatchEvent event) {
       if (event.type.toString().contains('modify')) {
-        final css = sass.compile(_scssFilePath);
+        final css = sass.compile(_scssFilePath, style: sass.OutputStyle.compressed);
         cssFileSink
             .writeToFileAsync(css, p.join(cssDirectoryName, cssFileName))
             .then((value) => _ioSink = value);
