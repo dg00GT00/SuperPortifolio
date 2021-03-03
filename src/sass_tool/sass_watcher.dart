@@ -1,45 +1,45 @@
 import 'dart:io';
 
 import 'package:logging/logging.dart';
+import 'package:path/path.dart' as p;
 import 'package:rxdart/rxdart.dart';
 import 'package:sass/sass.dart' as sass;
 import 'package:watcher/watcher.dart';
 
 import 'css_writer.dart';
 import 'logger.dart';
-import 'utils/files_system.dart';
 
-class WatcherBuilder {
-  Stream<WatchEvent> sassStream;
-
-  Stream<ProcessSignal> processStream;
-
-  Future<void> buildWatcherStreamsAsync() async {
-    final directory = await getDefaultSourceDirectory();
-    sassStream = DirectoryWatcher(directory.path).events;
-    processStream = ProcessSignal.sigint.watch();
-  }
-}
-
-class SassWatcher extends WatcherBuilder {
+class SassWatcher {
   IOSink _ioSink;
+  String _scssFilePath;
+  Stream<WatchEvent> _sassStream;
+  Stream<ProcessSignal> _processStream;
+
+  final String cssDirectoryName, cssFileName;
   final BaseLogger logger;
 
-  SassWatcher({this.logger}) {
+  SassWatcher(this.cssDirectoryName, this.cssFileName, {this.logger}) {
     logger.loggerName = runtimeType.toString();
   }
 
-  void watch(CssFileSink cssFileSink, String scssFilePath) {
+  Future<void> buildWatcherStreamsAsync(
+      String scssDirectoryName, String scssFileName) async {
+    _sassStream = DirectoryWatcher(scssDirectoryName).events;
+    _scssFilePath = p.join(scssDirectoryName, scssFileName);
+    _processStream = ProcessSignal.sigint.watch();
+  }
+
+  void watch(CssFileSink cssFileSink) {
     logger.log(Level.INFO, 'Watching sass compilation...');
 
-    final subs = sassStream.switchMap((WatchEvent event) {
+    final subs = _sassStream.switchMap((WatchEvent event) {
       if (event.type.toString().contains('modify')) {
-        final css = sass.compile(scssFilePath);
+        final css = sass.compile(_scssFilePath);
         cssFileSink
-            .writeToFileAsync(css, cssFileSink.buildDefaultCssFilePath())
+            .writeToFileAsync(css, p.join(cssDirectoryName, cssFileName))
             .then((value) => _ioSink = value);
       }
-      return processStream;
+      return _processStream;
     }).listen((_) {}, onError: (e) {
       logger.log(Level.SEVERE, 'Scss compilation error:\n ${e}');
     });
