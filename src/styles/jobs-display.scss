@@ -5,16 +5,24 @@
   .jobs {
     display: grid;
     grid-template-areas: "description image"
-                       "description icons"
-                       "description obs";
+                         "description icons"
+                         "description obs";
+
+    @media (max-width: 740px) {
+      grid-template-areas: "description description"
+                           "image image"
+                           "icons icons"
+                           "obs obs";
+    }
 
     .job-description {
       grid-area: description;
       padding-right: 10em;
+      font-size: clamp(0.5rem, 1vw, 1rem);
 
       h2 {
-        font-size: 1.6rem;
         margin-bottom: 2em;
+        font-size: clamp(1rem, 2vw, 1.6rem);
 
         & + p {
           margin-bottom: 2em;
@@ -48,7 +56,7 @@
 
       p {
         @extend %secondary-font;
-        font-size: .7rem;
+        font-size: clamp(0.3rem, 0.7vw, 0.7rem);
       }
     }
   }
