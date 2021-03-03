@@ -1,0 +1,58 @@
+@mixin curriculum() {
+  .curriculum-container {
+    position: relative;
+
+    .curriculum {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 14% 0 5% 0;
+
+      .avatar-container {
+        border: 1px solid #0000001f;
+        border-radius: 50em;
+        width: 10%;
+        height: 75%;
+        background-color: #cae4db;
+        position: absolute;
+        top: -60%;
+
+        .avatar {
+          width: 100%;
+          clip-path: circle();
+        }
+      }
+
+      .curriculum-body {
+        background-color: #F0F0F0;
+        border-radius: 12px;
+        padding: 4em 3em;
+
+        p {
+          margin: 2em 0;
+        }
+
+        .curriculum-title {
+          text-align: center;
+          font-size: 2rem;
+        }
+
+        .skills {
+          display: flex;
+          list-style: none;
+          width: 65%;
+          margin: 0 auto;
+          align-items: center;
+          justify-content: space-evenly;
+
+          .separator {
+            width: .6em;
+            height: .6em;
+            background-color: #2a6781;
+            border-radius: 50em;
+          }
+        }
+      }
+    }
+  }
+}

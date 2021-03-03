@@ -163,9 +163,7 @@ body {
 
 @include middle-marketing-stripe();
 
-.curriculum {
-
-}
+@include curriculum();
 
 @include footer();
 
