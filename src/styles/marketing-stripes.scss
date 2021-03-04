@@ -3,7 +3,7 @@
 @mixin top-marketing-stripe() {
   .top-marketing-stripe {
     width: 100%;
-    height: 150px;
+    height: #{"min(9vw, 150px)"};
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -16,17 +16,19 @@
 
       .slogan {
         @extend %logo-font;
-        font-size: 1.5rem;
+        z-index: 2;
+        font-size: clamp(0.6rem, 1.7vw, 1.5rem);
         color: #00000096;
       }
     }
 
     img {
-      object-fit: none;
-      object-position: 0 20%;
+      object-fit: cover;
+      object-position: top;
       width: 50%;
       height: 100%;
       position: absolute;
+      padding-left: #{"min(30vw, 10em)"};
     }
   }
 }

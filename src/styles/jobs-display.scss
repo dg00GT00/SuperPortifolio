@@ -9,6 +9,7 @@
                          "description obs";
 
     @media (max-width: 740px) {
+      grid-template-columns: 60%;
       grid-template-areas: "description description"
                            "image image"
                            "icons icons"
@@ -17,11 +18,15 @@
 
     .job-description {
       grid-area: description;
-      padding-right: 10em;
+      padding-right: 2em;
       font-size: clamp(0.5rem, 1vw, 1rem);
 
+      @media (max-width: 740px) {
+        padding-right: initial;
+      }
+
       h2 {
-        margin-bottom: 2em;
+        margin-bottom: #{"min(3vw, 2em)"};
         font-size: clamp(1rem, 2vw, 1.6rem);
 
         & + p {
@@ -37,15 +42,26 @@
     .job-image {
       grid-area: image;
       transition: transform .3s;
+      height: 240px;
+
+      @media (max-width: 740px) {
+        margin: #{"min(3vw, 1em)"} 0;
+        height: 150px;
+      }
 
       &:hover {
         transform: scale(1.01);
         cursor: pointer;
       }
 
-      img {
+      a {
+        display: block;
+        background-image: url("../../src/assets/fakecommerce-thumbs.svg");
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 100%;
         height: 100%;
-        width: 85%;
       }
     }
 

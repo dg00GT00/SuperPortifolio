@@ -1,6 +1,6 @@
 %icons-sets {
   .job-icons-set {
-    margin: 2em 0;
+    margin: #{"min(1vw, 2em)"} 0;
     display: flex;
     grid-area: icons;
     flex-direction: column;
@@ -11,23 +11,12 @@
       display: flex;
     }
 
-    .different-margins-left {
-      margin: 0 1.5em 0 3em;
-    }
-
-    .different-margins-right {
-      margin: 0 3em 0 1.5em;
-    }
-
-    .margins-middle {
-      margin: 0 1.5em;
-    }
-
     .job-icon-container {
       border: 1px solid #00000036;
-      width: 2.5em;
-      height: 2.5em;
+      width: #{"min(5vw, 2.3em)"};
+      height: #{"min(5vw, 2.3em)"};
       border-radius: 50em;
+      margin: 0 1em;
     }
 
     .azure {
