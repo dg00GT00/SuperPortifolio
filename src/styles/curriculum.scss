@@ -1,3 +1,5 @@
+@use "utilities/fonts" as *;
+
 @mixin curriculum() {
   .curriculum-container {
     position: relative;
@@ -6,16 +8,16 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 14% 0 5% 0;
+      margin: #{"min(20vw, 10em) 0 min(10vw, 5em) 0"};
 
       .avatar-container {
         border: 1px solid #0000001f;
         border-radius: 50em;
-        width: 10%;
-        height: 75%;
+        width: #{"min(17vw, 7em)"};
+        height: #{"min(17vw, 7em)"};
         background-color: #cae4db;
         position: absolute;
-        top: -60%;
+        top: #{"max(-12vw, -6em)"};
 
         .avatar {
           width: 100%;
@@ -26,7 +28,9 @@
       .curriculum-body {
         background-color: #F0F0F0;
         border-radius: 12px;
-        padding: 4em 3em;
+        padding: #{"4em min(3vw, 3em)"};
+        font-size: clamp(0.5rem, 1vw, 1rem);
+        @extend %secondary-font;
 
         p {
           margin: 2em 0;
@@ -34,7 +38,7 @@
 
         .curriculum-title {
           text-align: center;
-          font-size: 2rem;
+          font-size: clamp(0.9rem, 4vw, 1.5rem);
         }
 
         .skills {
