@@ -3,6 +3,7 @@
 @use "./marketing-stripes" as m;
 @use "./footer" as f;
 @use "./curriculum" as c;
+@use "./email-form" as e;
 
 *, *::before, *::after {
   margin: 0;
@@ -175,5 +176,7 @@ body {
 @include c.curriculum();
 
 @include m.end-marketing-stripe();
+
+@include e.email-form();
 
 @include f.footer();
