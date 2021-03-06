@@ -1,6 +1,11 @@
+@use "utilities/fonts" as *;
+
 @mixin email-form() {
   .core {
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+
     h1 {
+      font-size: inherit;
       text-align: center;
       margin-bottom: 2em;
     }
@@ -9,13 +14,30 @@
       display: flex;
       justify-content: space-between;
 
+      @media (max-width: 425px) {
+        justify-content: stretch;
+        .location {
+          display: none;
+        }
+      }
+
+      .location {
+        font-size: clamp(0.7rem, 1.6vw, 1.2rem);
+      }
+
       .forms {
         width: 70%;
+        font-size: clamp(0.7rem, 1vw, 1rem);
+
+        @media (max-width: 425px) {
+          width: 100%;
+        }
 
         #username,
         #email,
         #message {
           padding: .5rem;
+          font-size: inherit;
           width: 100%;
         }
 
@@ -26,10 +48,15 @@
 
         button {
           padding: 1em 3.5em;
-          border: none;
-          border-radius: 50em;
-          background-color: #c9e4db;
           margin-top: 2em;
+          border: none;
+          color: currentColor;
+          background-color: #cae4db;
+          display: inline-block;
+          width: 11em;
+          border-radius: 50em;
+          text-align: center;
+          font-size: clamp(0.5rem, 1vw, 1rem);
         }
       }
 
@@ -46,6 +73,7 @@
       .email,
       .message {
         position: relative;
+
         .message-label {
           top: .5rem;
         }
