@@ -41,7 +41,7 @@ for (const obj in formObj) {
     const inputEl = document.getElementById(obj ?? "") as HTMLInputElement | HTMLTextAreaElement;
     if (formObj.hasOwnProperty(obj)) {
         if (inputEl) {
-            inputEl.oninput = inputListener(inputEl);
+            inputEl.oninput = inputEl.onfocus = inputListener(inputEl);
             inputEl.onblur = ev => {
                 for (const obj in formObj) {
                     const typedObj = obj as keyof FormObjType;
