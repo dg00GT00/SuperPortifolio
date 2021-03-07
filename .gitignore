@@ -1,6 +1,7 @@
 .idea
 node_modules
-dist
+dist/*
+!dist/index.html
 .js
 
 # Files and directories created by pub
