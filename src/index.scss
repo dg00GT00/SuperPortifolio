@@ -1,9 +1,9 @@
-@use "utilities/fonts" as *;
-@use "./jobs-display" as j;
-@use "./marketing-stripes" as m;
-@use "./footer" as f;
-@use "./curriculum" as c;
-@use "./email-form" as e;
+@use "styles/utilities/fonts" as *;
+@use "styles/jobs-display" as j;
+@use "styles/marketing-stripes" as m;
+@use "styles/footer" as f;
+@use "styles/curriculum" as c;
+@use "styles/email-form" as e;
 
 *, *::before, *::after {
   margin: 0;
@@ -13,7 +13,7 @@
 }
 
 body {
-  background-image: url("../../src/assets/cubes.png");
+  background-image: url("assets/cubes.png");
   background-position: center center;
   background-repeat: repeat;
   background-size: clamp(1em, 5vw, 2.4em);
