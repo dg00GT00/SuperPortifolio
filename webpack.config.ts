@@ -7,7 +7,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 const config: webpack.Configuration = {
     context: __dirname, // to automatically find tsconfig.json
     mode: "production",
-    entry: {main: "./src/script/main.ts"},
+    entry: { main: "./src/script/main.ts" },
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js"
@@ -56,8 +56,12 @@ const config: webpack.Configuration = {
             }
         ]
     },
+    // @ts-ignore
+    devServer: {
+        contentBase: path.resolve(__dirname, "dist"),
+    },
     resolve: {
-        extensions: [".ts", ".js", ".scss"]
+        extensions: [ ".ts", ".js", ".scss" ]
     },
     plugins: [
         new ForkTsCheckerWebpackPlugin(),
