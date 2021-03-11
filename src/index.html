@@ -222,22 +222,52 @@
                 <p>Em todo o lugar</p>
             </div>
             <div class="forms">
-                <form action="">
+                <form enctype="multipart/form-data">
                     <div>
                         <div class="username">
                             <label for="username">Nome completo</label>
-                            <input type="text" id="username" required>
+                            <input type="text" id="username" name="userName" required>
                         </div>
                         <div class="email">
                             <label for="email">Email</label>
-                            <input type="email" id="email" required>
+                            <input type="email" id="email" name="email" required>
                         </div>
                     </div>
                     <div class="message">
                         <label for="message" class="message-label">Sua menssagem</label>
                         <textarea name="message" id="message" cols="30" rows="10" required></textarea>
                     </div>
-                    <button type="submit">Enviar</button>
+                    <div class="submit-container">
+                        <button type="submit">Enviar</button>
+                        <div class="loading-spinner">
+                            <div class="sk-fading-circle">
+                                <div class="sk-circle1 sk-circle"></div>
+                                <div class="sk-circle2 sk-circle"></div>
+                                <div class="sk-circle3 sk-circle"></div>
+                                <div class="sk-circle4 sk-circle"></div>
+                                <div class="sk-circle5 sk-circle"></div>
+                                <div class="sk-circle6 sk-circle"></div>
+                                <div class="sk-circle7 sk-circle"></div>
+                                <div class="sk-circle8 sk-circle"></div>
+                                <div class="sk-circle9 sk-circle"></div>
+                                <div class="sk-circle10 sk-circle"></div>
+                                <div class="sk-circle11 sk-circle"></div>
+                                <div class="sk-circle12 sk-circle"></div>
+                            </div>
+                        </div>
+                        <div class="message-sent-successfully">
+                            <svg style="width:4em;height:auto" viewBox="0 0 24 24">
+                                <path fill="green" d="M20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4C12.76,4 13.5,4.11 14.2,4.31L15.77,2.74C14.61,2.26 13.34,2 12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12M7.91,10.08L6.5,11.5L11,16L21,6L19.59,4.58L11,13.17L7.91,10.08Z" />
+                            </svg>
+                            <p>Mensagem enviada com sucesso</p>
+                        </div>
+                        <div class="message-sent-failed">
+                            <svg style="width:4em;height:auto" viewBox="0 0 24 24">
+                                <path fill="red" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2C6.47,2 2,6.47 2,12C2,17.53 6.47,22 12,22C17.53,22 22,17.53 22,12C22,6.47 17.53,2 12,2M14.59,8L12,10.59L9.41,8L8,9.41L10.59,12L8,14.59L9.41,16L12,13.41L14.59,16L16,14.59L13.41,12L16,9.41L14.59,8Z" />
+                            </svg>
+                            <p>Error ao enviar sua menssagem. Tente novamente!</p>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
