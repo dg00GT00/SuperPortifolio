@@ -74,6 +74,14 @@ body {
       align-items: center;
       justify-content: space-between;
 
+      .about,
+      .contact {
+        cursor: pointer;
+        &:hover {
+          color: darken(#cae4db, 10%);
+        }
+      }
+
       .logo {
         height: 100%;
         width: max-content;
@@ -114,7 +122,7 @@ body {
     align-items: center;
     justify-content: space-between;
     grid-template-rows: auto auto 100px auto;
-    grid-template-columns: 44% minmax(auto, 40em);
+    grid-template-columns: 44% minmax(auto, 30em);
     grid-template-areas: "name person"
                          "role person"
                          "button person"
@@ -144,15 +152,14 @@ body {
       grid-area: person;
       width: 100%;
       height: #{"min(40vw, 500px)"};
-
-      img {
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-      }
+      background-image: url("assets/landpage-person.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
     }
 
     .button {
+      cursor: pointer;
       grid-area: button;
       text-decoration: none;
       color: currentColor;
@@ -163,6 +170,7 @@ body {
       padding: 1em;
       text-align: center;
       font-size: clamp(0.5rem, 1vw, 1rem);
+      border: none;
 
       &:hover {
         background-color: darken(#cae4db, 10%);
