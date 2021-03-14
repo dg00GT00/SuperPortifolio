@@ -9,7 +9,7 @@ const contact: HTMLLIElement | null = document.querySelector(".contact");
 
 if (seeJobs) {
     seeJobs.onclick = (ev: MouseEvent): void => {
-        scrollToPageSection(".jobs");
+        scrollToPageSection(".job-content");
     };
 }
 

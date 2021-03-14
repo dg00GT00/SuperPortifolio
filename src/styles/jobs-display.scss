@@ -2,7 +2,8 @@
 @use "./jobs-icons-sets" as *;
 
 @mixin job-display() {
-  .jobs {
+  .job-content {
+    margin: 3em 0;
     display: grid;
     grid-template-areas: "description image"
                          "description icons"

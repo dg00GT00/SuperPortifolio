@@ -19,8 +19,53 @@
       margin: 0 1em;
     }
 
+    .sass {
+      background-image: url("../assets/logos/this/sass.svg");
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 116%;
+      background-position: center;
+    }
+
+    .webpack {
+      background-image: url("../assets/logos/this/webpack.svg");
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 90%;
+      background-position: center;
+    }
+
+    .azure-webstatic {
+      background-image: url("../assets/logos/this/static-apps.svg");
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+    }
+
+    .azure-functions {
+      background-image: url("../assets/logos/this/azurefunctions-icon.svg");
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+    }
+
+    .github-actions {
+      background-image: url("../assets/logos/this/githubactions.svg");
+      height: 100%;
+      width: 100%;
+      background-repeat: no-repeat;
+      background-size: 70%;
+      background-position: center;
+    }
+
     .azure {
-      background-image: url("../../src/assets/logos/azure.svg");
+      background-image: url("../assets/logos/fakecommerce/azure.svg");
       height: 100%;
       width: 100%;
       background-size: 81%;
@@ -29,7 +74,7 @@
     }
 
     .docker {
-      background-image: url("../../src/assets/logos/docker.svg");
+      background-image: url("../assets/logos/fakecommerce/docker.svg");
       height: 100%;
       width: 100%;
       background-size: 110%;
@@ -38,7 +83,7 @@
     }
 
     .stripe {
-      background-image: url("../../src/assets/logos/stripe.svg");
+      background-image: url("../assets/logos/fakecommerce/stripe.svg");
       height: 100%;
       width: 100%;
       background-size: 110%;
@@ -47,7 +92,7 @@
     }
 
     .postgres {
-      background-image: url("../../src/assets/logos/postgres.svg");
+      background-image: url("../assets/logos/fakecommerce/postgres.svg");
       height: 100%;
       width: 100%;
       background-size: cover;
@@ -56,7 +101,7 @@
     }
 
     .react {
-      background-image: url("../../src/assets/logos/react.svg");
+      background-image: url("../assets/logos/fakecommerce/react.svg");
       height: 100%;
       width: 100%;
       background-size: cover;
@@ -65,7 +110,7 @@
     }
 
     .redis {
-      background-image: url("../../src/assets/logos/redis.svg");
+      background-image: url("../assets/logos/fakecommerce/redis.svg");
       height: 100%;
       width: 100%;
       background-size: 97%;
@@ -74,7 +119,7 @@
     }
 
     .netcore {
-      background-image: url("../../src/assets/logos/netcore.svg");
+      background-image: url("../assets/logos/fakecommerce/netcore.svg");
       height: 100%;
       width: 100%;
       background-size: 86%;
@@ -83,7 +128,7 @@
     }
 
     .typescript {
-      background-image: url("../../src/assets/logos/typescript.svg");
+      background-image: url("../assets/logos/fakecommerce/typescript.svg");
       height: 100%;
       width: 100%;
       background-size: contain;
