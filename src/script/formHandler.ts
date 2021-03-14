@@ -1,4 +1,4 @@
-import {MessageDisplayStatus, setLoadingSpinnerState, submitButtonState} from "./formState";
+import { MessageDisplayStatus, setLoadingSpinnerState, submitButtonState } from "./formState";
 
 const formElem = document.querySelector("form");
 const messageDisplay = new MessageDisplayStatus();
@@ -13,7 +13,7 @@ formElem?.addEventListener('submit', async (e) => {
     try {
         submitButtonState(true);
         setLoadingSpinnerState(true);
-        const response = await fetch("http://localhost:7071/api/SendEmailFunction", {
+        const response = await fetch("/api/SendEmailFunction", {
             headers: {
                 "Content-Type": "application/json",
             },
@@ -24,6 +24,9 @@ formElem?.addEventListener('submit', async (e) => {
             body: JSON.stringify(value) // body data type must match "Content-Type" header
         });
 
+        if (response.status >= 400) {
+            throw new Error();
+        }
         setLoadingSpinnerState(false);
         messageDisplay.setMessageDisplay(true);
     } catch {

@@ -30,6 +30,8 @@ namespace api
             });
 
             var emailApiKey = Environment.GetEnvironmentVariable("EMAIL_API_KEY");
+            var recipientEmail = Environment.GetEnvironmentVariable("RECIPIENT_EMAIL");
+            var recipientName = Environment.GetEnvironmentVariable("RECIPIENT_NAME");
 
             Configuration.Default.AddApiKey("api-key", emailApiKey);
             var apiInstance = new TransactionalEmailsApi();
@@ -39,7 +41,7 @@ namespace api
                 Sender = new SendSmtpEmailSender(data.UserName, data.Email),
                 Params = new {MESSAGE = data.Message},
                 To = new List<SendSmtpEmailTo>(
-                    new[] {new SendSmtpEmailTo("duarte.gledson@gmail.com", "Gledson Duarte")}),
+                    new[] {new SendSmtpEmailTo(recipientEmail, recipientName)}),
             };
 
             try
