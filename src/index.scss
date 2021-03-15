@@ -22,6 +22,10 @@ body {
 .main-container {
   width: #{"min(90vw, 1880px)"};
   margin: 0 auto;
+  @media (max-width: 425px) {
+    width: initial;
+  }
+
 }
 
 .container-props {
@@ -68,6 +72,11 @@ body {
     top: min(0.9vw, 15px);
     left: 8%;
 
+    @media (max-width: 425px) {
+      width: 100%;
+      left: initial;
+    }
+
     .nav {
       height: 85%;
       display: flex;
@@ -77,6 +86,7 @@ body {
       .about,
       .contact {
         cursor: pointer;
+
         &:hover {
           color: darken(#cae4db, 10%);
         }
@@ -96,7 +106,7 @@ body {
 
         span {
           color: white;
-          font-size: clamp(0.7rem, 2vw, 1.5rem);
+          font-size: clamp(0.8rem, 2vw, 1.5rem);
           @extend %logo-font;
         }
       }
@@ -107,7 +117,7 @@ body {
         align-items: center;
         width: 40%;
         color: white;
-        font-size: clamp(0.5rem, 1.2vw, 1rem);
+        font-size: clamp(0.7rem, 1.2vw, 1rem);
         font-weight: 500;
 
         li {
@@ -169,7 +179,7 @@ body {
       border-radius: 50em;
       padding: 1em;
       text-align: center;
-      font-size: clamp(0.5rem, 1vw, 1rem);
+      font-size: clamp(0.6rem, 1vw, 1rem);
       border: none;
 
       &:hover {

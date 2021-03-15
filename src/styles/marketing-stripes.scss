@@ -3,7 +3,7 @@
 @mixin top-marketing-stripe() {
   .top-marketing-stripe {
     width: 100%;
-    height: #{"min(9vw, 150px)"};
+    height: #{"min(19vw, 150px)"};
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -17,8 +17,8 @@
       .slogan {
         @extend %logo-font;
         z-index: 2;
-        font-size: clamp(0.6rem, 1.7vw, 1.5rem);
-        color: #00000096;
+        font-size: clamp(0.8rem, 1.7vw, 1.5rem);
+        color: #235771;
       }
     }
 
@@ -30,13 +30,27 @@
       position: absolute;
       padding-left: #{"min(30vw, 10em)"};
     }
+
+    @media (max-width: 425px) {
+      .top-marketing-stripe-background {
+        background-image: none;
+        background-color: #2a6781;
+
+        .slogan {
+          color: #ededed;
+        }
+      }
+      img {
+        filter: opacity(.3);
+      }
+    }
   }
 }
 
 @mixin middle-marketing-stripe() {
   .middle-marketing-stripe {
     width: 100%;
-    height: #{"min(9vw, 150px)"};
+    height: #{"min(19vw, 150px)"};
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -49,8 +63,8 @@
 
       .slogan {
         @extend %logo-font;
-        font-size: clamp(0.6rem, 1.7vw, 1.5rem);
-        color: #00000096;
+        font-size: clamp(0.8rem, 1.7vw, 1.5rem);
+        color: #235771;
       }
     }
 
@@ -63,13 +77,29 @@
       z-index: -1;
     }
   }
+  @media (max-width: 425px) {
+    .middle-marketing-stripe {
+      background-color: #2a6781;
 
+      .middle-marketing-stripe-background {
+        background-image: none;
+        background-color: #77ab99;
+
+        .slogan {
+          color: #ededed;
+        }
+      }
+      img {
+        filter: opacity(.3);
+      }
+    }
+  }
 }
 
 @mixin end-marketing-stripe() {
   .end-marketing-stripe {
     width: 100%;
-    height: #{"min(9vw, 150px)"};
+    height: #{"min(19vw, 150px)"};
     display: flex;
     justify-content: flex-end;
     position: relative;
@@ -87,8 +117,8 @@
 
         .slogan {
           @extend %logo-font;
-          font-size: clamp(0.6rem, 1.7vw, 1.5rem);
-          color: #00000096;
+          font-size: clamp(0.8rem, 1.7vw, 1.5rem);
+          color: #235771;
         }
       }
     }
@@ -101,6 +131,22 @@
       height: 100%;
       position: absolute;
       padding-right: #{"min(30vw, 10rem)"};
+    }
+
+    @media (max-width: 425px) {
+      .end-marketing-stripe-background {
+        background-image: none;
+        background-color: #2a6781;
+
+        div {
+          .slogan {
+            color: #ededed;
+          }
+        }
+      }
+      img {
+        filter: opacity(.3);
+      }
     }
   }
 }

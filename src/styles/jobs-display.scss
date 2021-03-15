@@ -20,7 +20,7 @@
     .job-description {
       grid-area: description;
       padding-right: 2em;
-      font-size: clamp(0.5rem, 1vw, 1rem);
+      font-size: clamp(0.8rem, 1vw, 1rem);
 
       @media (max-width: 740px) {
         padding-right: initial;
@@ -73,7 +73,7 @@
 
       p {
         @extend %secondary-font;
-        font-size: clamp(0.3rem, 0.7vw, 0.7rem);
+        font-size: clamp(0.5rem, 0.7vw, 0.7rem);
       }
     }
   }

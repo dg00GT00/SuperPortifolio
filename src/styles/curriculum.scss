@@ -30,7 +30,7 @@
         border-radius: 12px;
         background-color: #F0F0F0;
         padding: #{"4em min(3vw, 3em)"};
-        font-size: clamp(0.5rem, 1vw, 1rem);
+        font-size: clamp(0.8rem, 1vw, 1rem);
         @extend %secondary-font;
 
         .first-curriculum-section {
@@ -42,7 +42,7 @@
           }
 
           p {
-            margin: #{"min(1.4vw, 2em) 0"};
+            margin: #{"min(3vw, 2em) 0"};
           }
 
           .curriculum-title {
@@ -104,12 +104,22 @@
             }
           }
 
+          @media (max-width: 425px) {
+            flex-direction: column;
+          }
+
           .angular-react {
             padding: 0 3em;
+            @media (max-width: 425px) {
+              padding: 0;
+            }
           }
 
           .net-core {
             width: 30%;
+            @media (max-width: 450px) {
+              width: 100%;
+            }
           }
 
           li {
@@ -119,6 +129,12 @@
             background-size: 0.8em;
             background-position: left center;
             padding: .5em 0 .5em 2em;
+          }
+
+          @media (max-width: 450px) {
+            & > div {
+              margin: 1em 0;
+            }
           }
         }
       }
