@@ -29,7 +29,7 @@
         width: 100%;
         border-radius: 12px;
         background-color: #F0F0F0;
-        padding: #{"4em min(3vw, 3em)"};
+        padding: #{"min(8vw, 4em) min(3vw, 3em)"};
         font-size: clamp(0.8rem, 1vw, 1rem);
         @extend %secondary-font;
 
@@ -42,18 +42,23 @@
           }
 
           p {
-            margin: #{"min(3vw, 2em) 0"};
+            margin: #{"min(1vw, 2em) 0"};
+          }
+
+          & > p {
+            margin: #{"min(2vw, 2em) 0"};
           }
 
           .curriculum-title {
             font-size: clamp(0.9rem, 4vw, 1.5rem);
+            margin-bottom: #{"min(3vw, 2em)"};
           }
 
           .skills {
             display: flex;
             list-style: none;
             width: 65%;
-            margin: 0 auto;
+            margin: 1em auto;
             align-items: center;
             justify-content: center;
 
@@ -61,7 +66,7 @@
               display: none;
             }
 
-            @media (max-width: 700px) {
+            @media (max-width: 1000px) {
               flex-direction: column;
               & .first-separator {
                 display: block;
@@ -77,8 +82,9 @@
               margin: #{"0 min(1vw, 1em)"};
             }
 
-            .upper-skills-set,
-            .inferior-skills-set {
+            .first-skills-set,
+            .second-skills-set,
+            .third-skills-set, {
               display: flex;
               align-items: center;
 
@@ -104,20 +110,20 @@
             }
           }
 
-          @media (max-width: 425px) {
+          @media (max-width: 768px) {
             flex-direction: column;
           }
 
           .angular-react {
             padding: 0 3em;
-            @media (max-width: 425px) {
+            @media (max-width: 768px) {
               padding: 0;
             }
           }
 
           .net-core {
             width: 30%;
-            @media (max-width: 450px) {
+            @media (max-width: 768px) {
               width: 100%;
             }
           }
